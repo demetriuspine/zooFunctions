@@ -20,8 +20,8 @@ function createEmployee(personalInfo, associatedWith) {
   return { ...personalInfo, ...associatedWith };
 }
 
-function isManager(id) {
-  // seu código aqui
+function isManager(managerId) {
+  return employees.map((person) => person.managers).some((id) => id.includes(managerId));
 }
 
 function addEmployee(id, firstName, lastName, managers, responsibleFor) {
