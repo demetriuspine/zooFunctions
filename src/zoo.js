@@ -24,15 +24,14 @@ function isManager(managerId) {
   return employees.map((person) => person.managers).some((id) => id.includes(managerId));
 }
 
-function addEmployee(id, firstName, lastName, managers = [], responsibleFor = []  ) {
+function addEmployee(id, firstName, lastName, managers = [], responsibleFor = []) {
   return employees.push({
     id,
     firstName,
     lastName,
     managers,
     responsibleFor,
-    }
-  );
+  });
 }
 
 function countAnimals(Species) {
