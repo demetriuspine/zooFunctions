@@ -83,7 +83,11 @@ function getOldestFromFirstSpecies(id) {
 }
 
 function increasePrices(percentage) {
-  // seu código aqui
+  const increase = 1 + (percentage / 100);
+  const pricesKeys = Object.keys(prices);
+  pricesKeys.forEach((element) => {
+    prices[element] = parseFloat((Math.round((prices[element] * increase) * 100) / 100).toFixed(2));// https://living-sun.com/pt/javascript/360678-javascript-parsefloat-force-2-decimals-as-number-javascript.html and https://www.alura.com.br/artigos/formatando-numeros-no-javascript?gclid=CjwKCAjwgb6IBhAREiwAgMYKRvOMbZgcE2Cjiey3lqd5AifJybCJituoS9wuu7teUuHxdFchRjHCxBoCQtgQAvD_BwE
+  });
 }
 
 function getEmployeeCoverage(idOrName) {
